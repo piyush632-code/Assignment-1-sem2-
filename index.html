@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Event Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Smart Event Dashboard</h1>
+
+    <div class="top-controls">
+        <input id="search" type="search" placeholder="Search events by title...">
+        <select id="filter-category">
+            <option value="all">All Categories</option>
+            <option value="Conference">Conference</option>
+            <option value="Workshop">Workshop</option>
+            <option value="Webinar">Webinar</option>
+            <option value="Meetup">Meetup</option>
+            <option value="Social">Social</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Networking">Networking</option>
+        </select>
+        <select id="sort-order">
+            <option value="date-asc">Date ↑</option>
+            <option value="date-desc">Date ↓</option>
+        </select>
+        <div class="count-badge">Events: <span id="event-count">0</span></div>
+        <button id="theme-toggle" class="secondary-btn">Toggle Theme</button>
+    </div>
+
+    <div class="main-container">
+
+        <div class="card">
+            <h3>Add New Event</h3>
+
+            <form id="event-form">
+                <label>Event Title:</label>
+                <input type="text" id="event-title" required>
+
+                <label>Event Date:</label>
+                <input type="date" id="event-date" required>
+
+                <label>Category:</label>
+                <select id="category">
+                    <option value="Conference">Conference</option>
+                    <option value="Workshop">Workshop</option>
+                    <option value="Webinar">Webinar</option>
+                    <option value="Meetup">Meetup</option>
+                    <option value="Social">Social</option>
+                </select>
+
+                <label>Description:</label>
+                <textarea id="description" required></textarea>
+
+                <button type="submit" class="primary-btn">Add Event</button>
+                <button type="button" id="cancel-edit-btn" class="secondary-btn" style="display:none;">Cancel Edit</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h3>My Events</h3>
+
+            <div class="button-group">
+                <button id="clear-events-btn" class="secondary-btn">Clear All Events</button>
+                <button id="add-sample-events-btn" class="secondary-btn">Add Sample Events</button>
+            </div>
+
+            <div id="all-event-container">
+                <p class="empty-text">No events yet. Add your first event!</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card dom-card">
+        <h3>DOM Manipulation Demo</h3>
+        <div id="key-display" class="key-box">
+            Press any key...
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
